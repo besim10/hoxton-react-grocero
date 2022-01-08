@@ -9,15 +9,16 @@ function Main(props){
     }
 
     const removeItemFromCart = targetProduct => {
-      const updatedProducts = products =>
+      if(targetProduct.amountInCart > 0){
+      const updatedProducts = products => 
       products.map(product =>
           product.id === targetProduct.id
-            ? { ...product, amountInCart: product.amountInCart - 1 }
+            ? { ...product, amountInCart: product.amountInCart - 1, inStock: product.inStock + 1 }
             : product
-        )
+      )
       props.setProducts(updatedProducts)
-    }
-    
+    }}
+
     const totalToPay = () =>{
       const itemsInCart = getItemsInCart()
       let totalToPay = 0

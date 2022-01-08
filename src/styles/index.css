@@ -19,6 +19,10 @@ body {
     color: var(--primary-color-darker);
 }
 
+span {
+    color: white;
+}
+
 img {
     width: 100%;
 }
@@ -42,7 +46,7 @@ button {
 /* Store */
 
 #store {
-    height: 40vh;
+    height: 43vh;
     padding: 1rem;
     overflow-y: scroll;
     background-color: var(--primary-color);
@@ -212,6 +216,7 @@ button {
 
 .total-number {
     font-weight: bold;
+    color: var(--primary-color-darker)
 }
 
 @media only screen and (max-width: 450px) {
