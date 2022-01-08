@@ -17,7 +17,9 @@ function Header(props){
                     </div>
                     <button onClick = {() => props.addItemInCart(product)}>Add to cart</button>
                     <span>{`Price: £${product.price}`}</span>
-                    <span>{`In Stock: ${product.inStock}`}</span>
+                    <span className={`${product.inStock> 0 ? 'in-stock' : 'out-of-stock'}`}>
+                        {`${product.inStock > 0 ? `In Stock: ${product.inStock}` : 'Out Of Stock😟'}`}
+                    </span>
                 </li>
             ))}
         </ul>
