@@ -1,13 +1,13 @@
 function Main(props){
 
-    function getItemsInCart(){
-        let products = props.products
+    const getItemsInCart = () => {
+      let products = props.products
         products = products.filter(function (product){
             return product.amountInCart > 0
         })
         return products
     }
-    
+
     const removeItemFromCart = targetProduct => {
       const updatedProducts = products =>
       products.map(product =>
@@ -16,6 +16,15 @@ function Main(props){
             : product
         )
       props.setProducts(updatedProducts)
+    }
+    
+    const totalToPay = () =>{
+      const itemsInCart = getItemsInCart()
+      let totalToPay = 0
+      for(const item of itemsInCart){
+        totalToPay += item.price * item.amountInCart
+      }
+      return totalToPay.toFixed(2)
     }
     return (   
         <main id="cart">
@@ -41,14 +50,14 @@ function Main(props){
             
           </ul>
         </div>
-  
+        
         <div className="total-section">
           <div>
             <h3>Total</h3>
           </div>
   
           <div>
-            <span className="total-number">£0.00</span>
+            <span className="total-number">{`£ ${totalToPay()}`}</span>
           </div>
         </div>
       </main>
