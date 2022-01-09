@@ -18,12 +18,13 @@ function App() {
       )
     setProducts(updatedProducts)
   }}
+  
   return (
     <div className="App">
     <Header products = {products} setProducts = {setProducts} addItemInCart = {addItemInCart} />
 
     <Main products = {products} setProducts = {setProducts} addItemInCart = {addItemInCart} />
-    
+
     </div>
   )
 }

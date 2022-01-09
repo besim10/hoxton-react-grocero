@@ -1,11 +1,9 @@
+import initialProducts from '../../data/data'
+
 function EmptyCartSection(props){
     
-    const emptyCart = () => {
-        let products = props.products
-        products = products.map(product => {return{...product, amountInCart: product.amountInCart = 0}})
-        props.setProducts(products)
-    }
-    
+    const emptyCart = () => props.setProducts(initialProducts)
+
     return (
         <button onClick = {() => emptyCart()} 
         className='empty-cart-button'>Empty Cart
