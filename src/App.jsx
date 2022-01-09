@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './styles/index.css'
 import initialProducts from './data/data'
-import Header from './components/Header'
-import Main from './components/Main'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
+
 function App() {
+  
   const [products, setProducts] = useState(initialProducts)
 
   const addItemInCart = targetProduct => {
