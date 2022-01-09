@@ -15,7 +15,7 @@ function App() {
         : product
       )
     setProducts(updatedProducts)
-  }};
+  }}
   // function addItemInCart2 (targetProduct2){
   //   if(targetProduct2.inStock > 0){
   //       function updatedProducts2 (products){

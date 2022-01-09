@@ -2,9 +2,8 @@ function Main(props){
 
     const getItemsInCart = () => {
       let products = props.products
-        products = products.filter(function (product){
-            return product.amountInCart > 0
-        })
+        products = products.filter(product => product.amountInCart > 0)
+      
         return products
     }
 
@@ -27,6 +26,13 @@ function Main(props){
       }
       return totalToPay.toFixed(2)
     }
+
+    const emptyCart = () => {
+      let products = props.products
+      products = products.map(product => {return{...product, amountInCart: product.amountInCart = 0}})
+      props.setProducts(products)
+    }
+
     return (   
         <main id="cart">
         <h2>Your Cart</h2>
@@ -59,8 +65,12 @@ function Main(props){
   
           <div>
             <span className="total-number">{`£ ${totalToPay()}`}</span>
+            
           </div>
+          
         </div>
+        <button onClick = {() => emptyCart()} 
+        className='empty-cart-button'>Empty Cart</button>
       </main>
     )
 }
