@@ -10,7 +10,7 @@ function Main(props){
         return products
     }
 
-    return (   
+    return (
       <main id="cart">
         
         <h2>Your Cart</h2>
